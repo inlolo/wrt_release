@@ -87,10 +87,10 @@ update_feeds() {
     sed -i '/packages_ext/d' "$FEEDS_PATH"
 
     # 检查并添加 small-package 源
+	#echo "src-git small8 https://github.com/kenzok8/small-package" >>"$FEEDS_PATH"
     if ! grep -q "small-package" "$FEEDS_PATH"; then
         # 确保文件以换行符结尾
         [ -z "$(tail -c 1 "$FEEDS_PATH")" ] || echo "" >>"$FEEDS_PATH"
-        #echo "src-git small8 https://github.com/kenzok8/small-package" >>"$FEEDS_PATH"
 		echo "src-git small8 https://github.com/inlolo/small-package" >>"$FEEDS_PATH"
     fi
 
